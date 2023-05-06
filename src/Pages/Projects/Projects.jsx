@@ -9,17 +9,17 @@ function Projects({ user }) {
         <Container>
             <SectionTitle>Projects</SectionTitle>
             <ul>
-                {user?.Projects?.map((project, i) => (
+                {user?.projects.map((project, i) => (
                     <ProjectItem key={i}>
                         <ProjectTitle>{project.name}</ProjectTitle>
                         <p>{project.summary}</p>
                         <SkillContainer>
-                            {[...Projects.languages].map((item, j) => (
+                            {[...project.languages.map((item, j) => (
                                 <Pill key={j}>{item}</Pill>
-                            ))}
+                            ))]}
                         </SkillContainer>
                     </ProjectItem>
-                ) ) }
+                ))}
             </ul>
         </Container>
     </Layout>
